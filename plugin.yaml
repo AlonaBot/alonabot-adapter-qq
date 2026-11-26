@@ -6,3 +6,4 @@ author: AlonaBot
 source: github.com/AlonaBot/alonabot-adapter-qq
 role: adapter
 adapter_id: qq
+icon: assets/qq.svg

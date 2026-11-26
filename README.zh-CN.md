@@ -1,5 +1,7 @@
 # AlonaBot QQ 适配器
 
+<img src="assets/qq.svg" width="80" height="80" alt="QQ">
+
 [English](README.md) · [简体中文](README.zh-CN.md)
 
 通过 QQ 官方 Bot API 接入 AlonaBot，覆盖 QQ 群、C2C 单聊、频道与频道私信，提供 Webhook 和 WebSocket 两种接入。消息、媒体、Markdown 及回调/URL 按钮沿用 AlonaBot SDK。

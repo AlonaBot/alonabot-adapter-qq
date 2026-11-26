@@ -1,5 +1,7 @@
 # AlonaBot QQ adapter
 
+<img src="assets/qq.svg" width="80" height="80" alt="QQ">
+
 [English](README.md) · [简体中文](README.zh-CN.md)
 
 Connect AlonaBot to QQ's official Bot API: groups, C2C chats, channels and channel DMs, using Webhook or WebSocket. Supports messages, media, Markdown and callback/URL buttons through the existing AlonaBot SDK.
