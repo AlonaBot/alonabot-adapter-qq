@@ -9,7 +9,7 @@ description: 实现、诊断、重构或设计插件的代码时使用；先确�
 
 ## 确定责任和完成条件
 
-读取需求、受影响实现、调用者、已有测试与当前 diff，确认分支和基线；Git 写操作使用独立 worktree。公开入口是 `plugin.go`，命令由 `internal/example/register.go` 集中登记，处理函数位于 `internal/example/handler/`，业务逻辑位于 `internal/example/`，进程入口为 `cmd/alonabot-plugin-example/main.go`。
+读取需求、受影响实现、调用者、已有测试与当前 diff，确认分支和基线；Git 写操作使用独立 worktree。公开入口是 `qq.go`，账号、双接入、事件、媒体与发送逻辑归 `internal/qq/`，进程入口为 `cmd/alonabot-adapter-qq/main.go`。
 
 对 Bug 先追踪输入、责任层和可复现失败；对新行为明确使用者、可观察结果和兼容性影响。需要 Core 或 SDK 配合的改动先在 Core 仓库确认方向，不在本仓绕过 SDK 或复制 Core 的逻辑。
 

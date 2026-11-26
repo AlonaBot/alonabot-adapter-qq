@@ -210,4 +210,5 @@ func (s *Session) Call(ctx context.Context, req Request) (Response, error) {
 
 ## 本仓差异
 
-派生仓库在此列出实际依赖及已批准的规范例外，并注明原因与适用范围；尚无差异时保留本说明。规则正文同步自 Core，统一规则先在 Core 修改。
+- 已批准依赖：`github.com/coder/websocket`，负责 QQ WebSocket 协议传输；HTTP、JSON、Ed25519 与媒体流使用 Go 标准库。
+- `adapter_test.go` 通过 CLI 生成临时应用与插件资源，运行真实 Core/SDK 和本地 QQ 模拟端；临时应用仅存在于测试临时目录。

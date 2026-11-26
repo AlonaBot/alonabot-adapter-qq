@@ -1,8 +1,1 @@
-{
-  "messages": {
-    "hello": "你好，{recipient}"
-  },
-  "commands": {
-    "hello": { "description": "发送问候" }
-  }
-}
+{"messages": {}}

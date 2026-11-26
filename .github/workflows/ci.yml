@@ -114,6 +114,13 @@ jobs:
             printf '%s\n' "$unformatted"
             exit 1
           fi
+      - name: Build matching SDK CLI with component toolchain
+        if: needs.repository.outputs.has_component == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          go mod download github.com/AlonaBot/AlonaBot
+          env GOTOOLCHAIN="$(go env GOVERSION)" go -C "$(go list -m -f '{{.Dir}}' github.com/AlonaBot/AlonaBot)" install ./cmd/alonabot
       - name: Run static analysis
         if: needs.repository.outputs.has_go == 'true'
         run: go vet ./...
@@ -121,7 +128,7 @@ jobs:
         if: needs.repository.outputs.has_go == 'true'
         env:
           CGO_ENABLED: '1'
-        run: go test -race ./...
+        run: go test -race -count=1 ./...
       - name: Build pure Go for five platforms
         if: needs.repository.outputs.has_go == 'true'
         shell: bash
@@ -131,13 +138,6 @@ jobs:
             echo "Building $target"
             GOOS=${target%/*} GOARCH=${target#*/} CGO_ENABLED=0 go build ./...
           done
-      - name: Build matching SDK CLI with component toolchain
-        if: needs.repository.outputs.has_component == 'true'
-        shell: bash
-        run: |
-          set -euo pipefail
-          go mod download github.com/AlonaBot/AlonaBot
-          env GOTOOLCHAIN="$(go env GOVERSION)" go -C "$(go list -m -f '{{.Dir}}' github.com/AlonaBot/AlonaBot)" install ./cmd/alonabot
       - name: Check component
         if: needs.repository.outputs.has_component == 'true'
         run: alonabot check .

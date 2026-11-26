@@ -1,42 +1,25 @@
-# Package and release your plugin
+# Package and release the QQ adapter
 
 [简体中文](releasing.zh-CN.md)
 
-After the [development setup](development.md), verify and package a local archive:
+After [development verification](development.md), create a local package:
 
 ```fish
-go build ./...
-go vet ./...
-go test ./...
-alonabot check .
-alonabot test .
 alonabot pack . --target linux/amd64 --out bin
 ```
 
-The template supports linux/amd64, linux/arm64, darwin/amd64, darwin/arm64 and windows/amd64. Archives include the plugin manifest, executable, resources and `LICENSE`. Keep the copyright holder and year accurate.
+The template release flow supports linux/amd64, linux/arm64, darwin/amd64, darwin/arm64 and windows/amd64. Archives contain the component declaration, executable, resources and `LICENSE`.
 
-## Prepare a version
+## Prepare a release
 
-1. Finish the [rename checklist](development.md), particularly `plugin.yaml` identity and `source: github.com/<owner>/<repo>`.
-2. Set `plugin.yaml` version (initial example: `0.1.0`). Add matching `changelog/<version>/en-US.md` and `zh-CN.md` files describing real changes. Replace the sample entries before the first release. Use one version heading, then change-category headings. Follow the [Core changelog convention](https://github.com/AlonaBot/AlonaBot/blob/main/changelog/README.md); put PR links at the end of entries and describe user actions when needed.
-3. Have the change reviewed and merged through the [contribution workflow](../CONTRIBUTING.md). Enable GitHub Actions and allow the Release job to write repository contents.
-4. With maintainer authorization, create and push the matching tag from the release commit:
+Update `plugin.yaml` and `changelog/<version>/{en-US,zh-CN}.md`. After review and maintainer merge, obtain release authorization before pushing the matching `v*` tag.
 
-```fish
-git tag v0.1.0
-git push origin v0.1.0
-```
-
-## Automated publishing
-
-Pushing a `v*` tag triggers [.github/workflows/release.yml](../.github/workflows/release.yml). It obtains the SDK with the existing `go get ...@latest` command, builds a matching CLI, runs tests, vet and `alonabot check .`, then calls [scripts/release.sh](../scripts/release.sh):
+The [Release workflow](../.github/workflows/release.yml) resolves SDK `latest`, builds its matching CLI, runs tests/component checks and invokes:
 
 ```fish
-bash scripts/release.sh v0.1.0 OWNER/alonabot-plugin-example
+bash scripts/release.sh v0.1.0 AlonaBot/alonabot-adapter-qq
 ```
 
-The script checks the tag/version, source/repository and both changelog files, rebuilds `dist/`, packages all five targets, and verifies each archive's `LICENSE`. It writes `dist/notes.md` under `## English` and `## 简体中文`, removes the first version heading, normalizes category headings to `###` and preserves fenced code. The workflow publishes the archives and notes as a GitHub Release. Source downloads are supplied by GitHub.
+The script checks version, source, bilingual changelogs and archived `LICENSE`, packages five platforms and generates bilingual release notes. The workflow publishes the archives as a GitHub Release. This implementation is delivered as a PR; maintainers control tags, merge and publication.
 
-Before retrying a failed release, read the first error and correct its cause. SDK `latest` is resolved anew by each workflow run; record the resolved version when diagnosing release behavior. This template keeps the organization template's SDK retrieval policy.
-
-General installation and component development are documented on the [documentation site](https://alonabot.github.io/). Cross-component changes should be coordinated with Core maintainers and included in their integration validation.
+Release notes distinguish simulated verification from live QQ testing and retain actual account permission, channel capability and WebSocket availability restrictions.

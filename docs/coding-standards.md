@@ -210,4 +210,5 @@ Commit only **integration tests** and **protocol-number checks**. Other tests st
 
 ## Repository differences
 
-Derived repositories should list actual dependencies and approved exceptions here, with their reasons and scope. Keep this placeholder until differences exist. Sync the rules above from Core; change shared rules in Core first.
+- Approved dependency: `github.com/coder/websocket` for QQ WebSocket transport. HTTP, JSON, Ed25519 and media streaming use the Go standard library.
+- `adapter_test.go` uses the CLI to generate a temporary app/plugin and runs real Core/SDK against local QQ simulators. Generated apps exist only in test temporary directories.

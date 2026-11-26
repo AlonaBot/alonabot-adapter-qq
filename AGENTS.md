@@ -1,6 +1,6 @@
 # 插件开发约定
 
-本仓是 AlonaBot Go 插件模板；派生仓库维护自己的插件，公开入口是 `plugin.go`，命令集中登记在 `internal/example/register.go`，处理函数位于 `internal/example/handler/`，业务逻辑归 `internal/example/`；进程入口为 `cmd/alonabot-plugin-example/main.go`。SDK、协议与 Core 在 [Core 仓库](https://github.com/AlonaBot/AlonaBot)维护，安装与通用使用文档在[文档站](https://alonabot.github.io/)。
+本仓维护 QQ 官方适配器；公开入口是 `qq.go`，实现位于 `internal/qq/`，进程入口为 `cmd/alonabot-adapter-qq/main.go`。SDK、协议与 Core 在 [Core 仓库](https://github.com/AlonaBot/AlonaBot)维护，安装与通用使用文档在[文档站](https://alonabot.github.io/)。
 
 ## 先读什么
 
