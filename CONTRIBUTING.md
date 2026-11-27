@@ -10,7 +10,7 @@ Start from the latest `main`, with a focused branch such as `feat/greeting`, `fi
 
 Every commit should contain a complete, reviewable change: keep affected callers, configuration, translations and documentation in sync, run the checks relevant to that change, and omit local records, credentials, runtime data and temporary tests. Use Simplified Chinese commit messages describing the change and necessary reason; a fixed type prefix is optional. Code comments and internal maintenance instructions also use Simplified Chinese. Logs, errors, identifiers and CLI output use English; public guides and changelogs have matching English and Simplified Chinese versions.
 
-Commit only integration tests through real entry points. The existing `plugin_test.go` drives `New()` through real Core and a test Adapter. Local unit, boundary and temporary tests use ignored `*_local_test.go`; one-off scripts use ignored `tmp/test/`. A PR normally adds one main-path integration test; explain any additional tests and record the number of committed test lines added.
+Commit only integration tests through real entry points. The existing `adapter_test.go` drives `New()` through real Core and a test Adapter. Local unit, boundary and temporary tests use ignored `*_local_test.go`; one-off scripts use ignored `tmp/test/`. A PR normally adds one main-path integration test; explain any additional tests and record the number of committed test lines added.
 
 ## Open a PR
 

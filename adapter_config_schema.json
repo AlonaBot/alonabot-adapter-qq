@@ -1,0 +1,7 @@
+{
+ "app_id": {"type":"string", "description":"QQ bot AppID", "required":true},
+ "app_secret": {"type":"string", "description":"QQ bot AppSecret", "secret":true, "required":true},
+ "mode": {"type":"string", "description":"Event transport: webhook or websocket", "options":["webhook","websocket"], "default":"webhook"},
+ "sandbox": {"type":"bool", "description":"Use QQ sandbox API", "default":false},
+ "guild_messages": {"type":"string", "description":"Channel message subscription: mentions or all (requires QQ permission)", "options":["mentions","all"], "default":"mentions"}
+}

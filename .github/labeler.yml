@@ -5,6 +5,6 @@
 "area: github-actions":
   - changed-files:
       - any-glob-to-any-file: [".github/**"]
-"area: plugin":
+"area: adapter":
   - changed-files:
-      - any-glob-to-any-file: ["*.go", "internal/**", "cmd/**", "plugin.yaml", "plugin_config_schema.json", "i18n/**", "go.mod", "go.sum", "scripts/**"]
+      - any-glob-to-any-file: ["*.go", "internal/**", "cmd/**", "plugin.yaml", "adapter_config_schema.json", "i18n/**", "go.mod", "go.sum", "scripts/**"]
