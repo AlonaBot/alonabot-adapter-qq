@@ -1,6 +1,6 @@
 # AlonaBot QQ 适配器
 
-<img src="assets/qq.svg" width="80" height="80" alt="QQ">
+<img src="assets/qq.png" width="62" height="62" alt="QQ">
 
 [English](README.md) · [简体中文](README.zh-CN.md)
 
@@ -24,3 +24,5 @@ alonabot install --source AlonaBot/alonabot-adapter-qq
 - [贡献指南](CONTRIBUTING.zh-CN.md) · [编码规范](docs/coding-standards.zh-CN.md)
 
 [MIT License](LICENSE)
+
+QQ Logo 版权归腾讯所有，素材原样取自 [QQ 官网](https://im.qq.com/index)的[官方 PNG](https://static-res.qq.com/static-res/imqq/qq-logo.png)。

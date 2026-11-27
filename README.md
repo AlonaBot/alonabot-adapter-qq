@@ -1,6 +1,6 @@
 # AlonaBot QQ adapter
 
-<img src="assets/qq.svg" width="80" height="80" alt="QQ">
+<img src="assets/qq.png" width="62" height="62" alt="QQ">
 
 [English](README.md) · [简体中文](README.zh-CN.md)
 
@@ -24,3 +24,5 @@ This ordinary component repository was generated from [FlanChanXwO/alonabot-plug
 - [Contributing](CONTRIBUTING.md) · [Coding standards](docs/coding-standards.md)
 
 [MIT License](LICENSE)
+
+QQ logo © Tencent. Original asset from the [official QQ website](https://im.qq.com/index): [source PNG](https://static-res.qq.com/static-res/imqq/qq-logo.png).
