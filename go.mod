@@ -3,7 +3,7 @@ module github.com/AlonaBot/alonabot-adapter-qq
 go 1.27.3
 
 require (
-	github.com/AlonaBot/AlonaBot v0.3.3
+	github.com/AlonaBot/AlonaBot v0.4.0
 	github.com/coder/websocket v1.8.15
 )
 
